@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 import '../helpers/tractive_colors.dart';
+import './new_account.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -68,39 +69,47 @@ class HomePage extends StatelessWidget {
               ),
             ),
             Container(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height * 0.1,
-                color: TractivColors.rust,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Expanded(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Text(
-                            'Get Started',
-                            style: TextStyle(
-                                fontFamily: 'BigNoodle',
-                                color: TractivColors.snow,
-                                letterSpacing: 3,
-                                fontSize: 20),
-                          ),
-                        ],
-                      ),
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height * 0.1,
+              color: TractivColors.rust,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Expanded(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'Get Started',
+                          style: TextStyle(
+                              fontFamily: 'BigNoodle',
+                              color: TractivColors.snow,
+                              letterSpacing: 3,
+                              fontSize: 20),
+                        ),
+                      ],
                     ),
-                    SizedBox(
-                        height: double.infinity,
-                        child: FlatButton(
-                          color: Color(0xFFC4714B),
-                          child: Icon(
-                            Icons.navigate_next,
-                            color: TractivColors.snow,
-                          ),
-                          onPressed: () {},
-                        ))
-                  ],
-                )),
+                  ),
+                  SizedBox(
+                    height: double.infinity,
+                    child: FlatButton(
+                      color: Color(0xFFC4714B),
+                      child: Icon(
+                        Icons.navigate_next,
+                        color: TractivColors.snow,
+                        size: 32,
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => NewAccount()),
+                        );
+                      },
+                    ),
+                  )
+                ],
+              ),
+            ),
           ],
         ),
       ),
